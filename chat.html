@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice one</title>
+    <title>Bradskine</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="chat.css">
 </head>
 
 <body>
     <header>
-        
         <nav>
-            <a href="home.html">Home</a>
-            <a href="chat.html">chat</a>
-            <a href="game.html">Game</a>
-            <a>on</a>
-            <a>earth</a>
-            <a>is</a>
-            <a>goin</a>
-            <a>on</a>
-            <a>one</a>
-            <a>two</a>
-            <a>three</a>
-            <a>four</a>
-            <a>five</a>
-            <a> six</a>
-            <a>seven</a>
-            <a>eight</a>
-            <a>nine</a>
-            <a>ten</a>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="home.html">Home</a></li>
+                <li class="nav-item"><a href="cv.html">My cv</a></li>
+                <li class="nav-item "><a href="chat.html">Chat</a></li>
+                <li class="nav-item"><a href="game.html">Game</a></li>
+                <li class="nav-item"><a href="#">Is</a></li>
+                <li class="nav-item"><a href="#">Goin</a></li>
+                <li class="nav-item"><a href="#">On</a></li>
+                <li class="nav-item"><a href="#">One</a></li>
+                <!-- <li class="nav-item"><a href="#">Two</a></li>
+                <li class="nav-item"><a href="#">Three</a></li>
+                <li class="nav-item"><a href="#">Four</a></li>
+                <li class="nav-item"><a href="#">Five</a></li>
+                <li class="nav-item"><a href="#">Six</a></li>
+                <li class="nav-item"><a href="#">Seven</a></li>
+                <li class="nav-item"><a href="#">Eight</a></li> -->
+            </ul>
         </nav>
     </header>
     <main>
+        <div class = "parallax-background"></div>
 
         <h1>talk to whom whoever what ever interesting</h1>
         <P id="movingText">Hello how is it going</P>
@@ -43,18 +42,22 @@
 
         <div id="chat-box">
             <div id="chat-messages"></div>
-            <div id="input-box">
+            <!-- <div id="input-box">
                 <input type="text" id="message-input" placeholder="Type your message...">
+                <button id="send-button">Send</button>
+            </div> -->
+            <div id="input-box">
+                <textarea id ="message-input" rows="2" cols="50" placeholder="Type your message..."></textarea>
                 <button id="send-button">Send</button>
             </div>
         </div>
 
         <div id="movingElement"></div>
-        <footer>
-            <h3> from @Bradskine</h3>
-        </footer>
+       
     </main>
- 
+    <footer>
+        <h3> from @Bradskine</h3>
+    </footer>
 </body>
 
 </html>

@@ -13,6 +13,8 @@
 //     });
 // });
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const movingText = document.getElementById('movingText');
     const movingElement = document.getElementById('movingElement');
@@ -47,4 +49,63 @@ document.addEventListener('DOMContentLoaded', function () {
         movingText.style.transform = `translate(${newPosition.x}px, ${newPosition.y}px)`;
     }, 2000);
 });
+
+
+document.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const parallaxBackground = document.querySelector('.parallax-background');
+
+    parallaxBackground.style.transform = 'translateY(' + (scrollPosition * -(0.5)) + 'px)';
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navItems = document.querySelectorAll('.nav-item');
+    const headerTitle = document.querySelector('h1');
+
+    navItems.forEach(item => {
+        item.addEventListener('click', function(event) {
+
+          
+            event.preventDefault();
+            
+            // Get the clicked link's text
+             const linkText = this.textContent;
+            const linkHref = this.querySelector('a').href;
+
+            // Get the bounding box of the clicked item and the header title
+            const itemRect = this.getBoundingClientRect();
+            const headerRect = headerTitle.getBoundingClientRect();
+
+            const centerX = window.innerWidth / 2;
+
+            // Calculate the translation values
+            const translateX = centerX - (itemRect.left + itemRect.width / 2);
+            const translateY = headerRect.top - itemRect.top;
+
+            // Remove any previous animations
+            navItems.forEach(nav => nav.classList.remove('animate'));
+
+            // Set inline styles for the animation
+            this.style.transition = 'transform 0.3s ease';
+            this.style.transform = `translate(${translateX}px, ${translateY}px) rotate(360deg)`;
+
+            // headerTitle.style.transition = 'opacity 0.3s ease';
+            // headerTitle.style.opacity = '0';
+
+            // Wait for the animation to complete
+            setTimeout(() => {
+                // Update the H1 text
+                headerTitle.textContent = linkText;
+
+                // Reset the styles
+                this.style.transition = '';
+                this.style.transform = '';
+              
+
+                window.location.href = linkHref;
+            }, 300); // Match this duration to your animation duration
+        });
+    });
+});
+
 

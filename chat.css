@@ -1,11 +1,5 @@
 
 
-/* body {
-    align-items: center;
-    justify-content: center;
-} */
-
-
 #chat-box {
     width: 100%;
     border: 1px solid #ccc;
@@ -15,27 +9,39 @@
 }
 
 #chat-messages {
-    padding:0;
-    max-height: 200px;
+    padding: 10;
+    max-height: 12vh; /* 60 lower for testing */
     overflow: hidden auto;
+
+    white-space:  inherit;
 }
+
 
 #chat-messages div {
     padding: 0.2em;
 }
 
-#input-box {
+/* #input-box {
     display: flex;
     background-color: #fff;
     overflow: hidden auto;
-}
+    white-space: normal;
+} */
 
+#input-box {
+    display: flex;
+    background-color: #fff;
+    overflow: hidden auto; /* If you want to allow vertical scrolling */
+    white-space: normal; /* This is not needed for textarea, but won't hurt */
+    width: 100%; /* Ensure it takes the full width if desired */
+}
 #message-input {
     flex: 1;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+    resize: none;
 }
 
 #send-button {
