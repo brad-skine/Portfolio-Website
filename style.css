@@ -5,8 +5,8 @@ html {
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     width: 100%;
-    overflow: hidden auto 
-    
+   overflow: visible auto;
+
 }
 
 * {
@@ -76,7 +76,7 @@ main {
 
 nav {
     /* background-color: #666; */
-    width: 100vw;
+    width: 100%;
     padding: 0.05em 0.5em;
     height: 7vh;
     display: flex;
@@ -125,26 +125,42 @@ nav a , h1 {
     padding: 0px 15px;
     margin: 0.1em;
     font-size: 1.7rem;
+    text-decoration-color: black;
     transition: color 0.7s;
+    /* text-decoration: ; */
 }
 
 
-nav a:hover {
+nav a:hover, h1 {
     /* background-color: #888; */
     color: white;
     text-shadow: red;
     -webkit-text-stroke-color: black;
     transition: color 0.1s;
+    text-decoration-color: white;
     /* border-radius: 10%; */
 }
 
-.pageOn a, .pageOn, h1{
-    color: black;
-    text-decoration-color: white;
-    /* text-decoration: underline; */
+h1 {
+    font-size: 1.9rem;
+    /* padding: 1rem; */
+    background-color: rgb(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-weight: normal;
+    /* margin: 0 0 1vh 0px; */
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    text-decoration-thickness: 0.04em;
 }
 
 
+.pageOn a, .pageOn{
+    /* color: black; */
+    text-decoration-color: white;
+    /* text-decoration: underline; */
+}
 
 .pageOn a:hover, .pageOn:hover{
     color: black;
@@ -158,17 +174,6 @@ nav a:hover {
     /* transition: transform 0.5s ease, opacity 0.5s ease; */
 }
 
-h1 {
-    font-size: 1.9rem;
-    /* padding: 1rem; */
-    background-color: rgb(0, 0, 0, 0.2);
-    color: black;
-    border-radius: 5px;
-    font-weight: normal;
-    /* margin: 0 0 1vh 0px; */
-    width: 100%;
-    text-align: center;
-}
 
 
 
@@ -247,6 +252,7 @@ footer {
 
 
 ul h2 {
+    margin: 0 auto;
     margin-top: 7vh;
     color: black;
     /* border: 0.2vh solid black; */
@@ -254,8 +260,11 @@ ul h2 {
 
     text-align: center;
     font-size: 1.7rem;
-    text-decoration: underline;
-    text-decoration-thickness: 7%;
+    /* border: 1px solid white; */
+    width: 50vw;
+  
+    /* text-decoration: underline;
+    text-decoration-thickness: 7%; */
 } 
 
 .project {
@@ -265,7 +274,7 @@ ul h2 {
     padding: 10px;
     border-radius: 8px;
     text-align: center;
-    
+    background-color: rgba(255, 255, 255, 0.01);
 }
 
 .bigger_project {
@@ -343,21 +352,25 @@ ul h2 {
 
  
 .button {
+    
     width: 12.5rem;
     margin: 2vh auto;
     position: relative;
 }
 
 .button a {
-    display: block;
-    height: 3.125rem;
-    width: 12.5rem;
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    /* height: 3.125rem;
+    width: 12.5rem; */
+    padding: 0 0.6em;
     color: white;
     font: 1.063rem/3.125rem sans-serif, Helvetica;
     text-decoration: none;
     text-align: center;
 
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     background-color: #4CAF50;
     position: relative;
     z-index: 1;
@@ -365,16 +378,24 @@ ul h2 {
     box-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.2);
     overflow: hidden;
     line-height: -1;
+    
+    transition: color 0.5s;
+}
+
+
+
+.button a:hover {
+    color: black;
 }
 
 .button p {
     background-color: darkgreen;
     display: block;
     height: 2.5rem;
-    width: 11.25rem;
-    margin: -2.9375rem 0 0 0.625rem;
+    width: 10.5rem;
+    margin: -2.7375rem 0 0 0.945rem;
     text-align: center;
-    font: 0.875rem/2.8125rem sans-serif, Helvetica;
+    font: 0.875rem/2.5rem sans-serif, Helvetica;
     color: #eee;
     position: absolute;
     z-index: -1;
@@ -384,39 +405,48 @@ ul h2 {
 }
 
 .button a, .button p {
+    
     border-radius: 0.8125rem;
     box-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .button:hover .bottom { 
-    transform: translateX(-100%);
+    transform: translate(-98%);
 }
 
 .button:hover .top {
-    transform: translateX(100%);
+    transform: translateX(98%);
 }
 
  .download_icon {
-
-    margin: 0;
-    font-size: 2rem;
+    border-radius: 10%;
     display: inline-block;
+    height:100;
+    background-color: darkgreen;
+    font-size: 2em;
+    color: white;
     transition: transform 0.3s ease;
-    font-weight: 2333333;
+    transition: color 0.5s;
+ 
 } 
 
+
 .button a:hover .download_icon {
-    animation: bounce 0.5s infinite;
+    color: black;
+    animation: bounce 0.7s infinite;
+    animation-fill-mode: forwards; /* Keeps the last keyframe state after animation ends */
 }
 
 @keyframes bounce {
     0%, 100% {
         transform: translateY();
+
     }
     50% {
         transform: translateY(-0.3125rem); /* Adjust the bounce height as needed */
     }
 }
+
 
 .button a::before {
     content: '';
@@ -425,7 +455,7 @@ ul h2 {
     left: 50%;
     width: 18.75rem; /* 300% of 200px converted to rem */
     height: 18.75rem; /* 300% of 50px converted to rem */
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.1);
     transition: width 0.6s ease, height 0.6s ease, top 0.3s ease, left 0.3s ease;
     border-radius: 50%;
     z-index: 0;
