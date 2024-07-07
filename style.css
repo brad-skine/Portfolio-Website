@@ -5,7 +5,8 @@ html {
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     width: 100%;
-   overflow: visible auto;
+    height: 100%;
+   overflow: visible scroll;
 
 }
 
@@ -24,7 +25,7 @@ body {
     min-height: 100vh;
     width: 100%;
     overflow-y: hidden;
-
+    overflow: hidden;
 }
 
 header {
@@ -46,11 +47,11 @@ main {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    /* min-height: 55vh; */
+    min-height: 55vh;
     width: 93%;
     overflow-x: hidden;
     
-    overflow: visible;
+    overflow: hidden;
 
     /* scrollbar-color: yellow; */
     /* overflow: hidden auto; */
@@ -80,7 +81,9 @@ nav {
     padding: 0.05em 0.5em;
     height: 7vh;
     display: flex;
-   
+    /* justify-content: space-between;
+    align-items: center;
+    position: relative; */
 }
 
 
@@ -103,17 +106,6 @@ nav {
    
 }
 
-@media screen and (max-width: 375px) {
- 
-    html {
-        font-size: 7px;
-    }
-    .nav-item {
-        flex-basis: 50%; 
-        text-align: center;
-    }
-}
-
 
 
 nav a , h1 {
@@ -126,7 +118,7 @@ nav a , h1 {
     margin: 0.1em;
     font-size: 1.7rem;
     text-decoration-color: black;
-    transition: color 0.7s;
+    transition: color 0.5s;
     /* text-decoration: ; */
 }
 
@@ -136,10 +128,73 @@ nav a:hover, h1 {
     color: white;
     text-shadow: red;
     -webkit-text-stroke-color: black;
-    transition: color 0.1s;
+    transition: color 0.05s;
     text-decoration-color: white;
     /* border-radius: 10%; */
 }
+
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 7vh; /* Adjust size as needed */
+    cursor: pointer;
+    z-index: 343;
+}
+.hamburger {
+    border-radius: 10%;
+    transition: color 0.1s;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: black;
+}
+
+.hamburger:hover {
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    color: white;
+    transition: color 0.2s text 2s;
+}
+
+
+
+
+@media screen and (max-width: 375px) {
+    html {
+        font-size: 7px;
+    }
+
+    .nav-toggle {
+        display: block;
+        margin-left: 5vw;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 0vh;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .nav-list.show {
+        display: flex;
+    }
+
+    .nav-item {
+        flex-basis: 100%;
+        text-align: center;
+        padding: 1em 0;
+    }
+
+
+
+}
+
+
+
 
 h1 {
     font-size: 1.9rem;
@@ -173,7 +228,6 @@ h1 {
     position: relative;
     /* transition: transform 0.5s ease, opacity 0.5s ease; */
 }
-
 
 
 
@@ -213,8 +267,8 @@ p#mainText {
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: black;
     text-align: center;
     padding: 1rem;
     bottom: 0;
@@ -262,6 +316,8 @@ ul h2 {
     font-size: 1.7rem;
     /* border: 1px solid white; */
     width: 50vw;
+   
+    text-wrap: nowrap;
   
     /* text-decoration: underline;
     text-decoration-thickness: 7%; */
@@ -286,6 +342,7 @@ ul h2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    
 }
 
 .project img {
@@ -468,3 +525,57 @@ ul h2 {
     top: 50%;
     left: 50%;
 }
+
+
+
+
+.contacts_content {
+    background-color: rgba(255, 255, 255, 0.01); /*makes text easier to read */
+    width: 100%;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-size: 1.3rem;
+    box-sizing: border-box;
+}
+
+
+.contacts_content {
+    font-size: 1.3rem;
+    -webkit-text-stroke: 0.019em white;
+   
+    padding: 0px 15px;
+
+
+    text-decoration-color: black;
+    transition: color 0.7s;
+}
+
+.contacts_content p {
+    margin: 4vh 0; /* Adds spacing between paragraphs */
+}
+
+.contacts_content a  {
+    color: black;
+    /* border: 0.2vh solid black; */
+    -webkit-text-stroke: 0.019em white;
+
+    padding: 0px 0.5rem;
+    text-decoration-color: black;
+    transition: color 0.5s;
+    /* text-decoration: ; */
+}
+
+
+.contacts_content a:hover {
+    /* background-color: #888; */
+    color: white;
+    text-shadow: red;
+    -webkit-text-stroke-color: black;
+    transition: color 0.1s;
+    text-decoration-color: white;
+    /* border-radius: 10%; */
+}
+
+

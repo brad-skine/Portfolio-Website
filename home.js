@@ -109,3 +109,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+    var hamburger = document.querySelector('.hamburger');
+  
+    navToggle.addEventListener('click', function() {
+        navList.classList.toggle('show');
+       
+        if (hamburger.textContent == '☰') { // for opening and clsoing the nav menu on mobile or small device
+            hamburger.textContent = '✕';
+        } else {
+            hamburger.textContent = '☰';
+        }
+     
+        
+    });
+});
