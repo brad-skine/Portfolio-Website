@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'reg';
+    src: url('Fonts/regularFont.ttf') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+         url('Fonts/regularFont.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+
+
 /* style.css */
 html {
     margin: 0;
@@ -267,7 +275,7 @@ p#mainText {
     0.1px 0.1px 0 white; */
 }
 
-footer {
+footer { /* bottom of saything that website is made by me ad me alone */
     background-color: rgba(0, 0, 0, 0.2);
     color: white;
     text-align: center;
@@ -277,9 +285,9 @@ footer {
     border-radius: 3px;
     justify-content: center;
     align-items: center;
-
     margin-top: auto;
     flex-shrink: 0;
+    font-family: "reg";
     /* position: fixed; */
 }
 
@@ -599,3 +607,26 @@ h2 {
 }
 
 
+
+.project img.profile_pic {
+    width: auto;  /* 50% of the viewport width */
+    height: 50vh; /* 50% of the viewport height */
+    object-fit: cover;  /* Ensures the image covers the container while maintaining aspect ratio */
+    display: block; /* Ensures no extra space around the image */
+    margin: auto; /* Centers the image horizontally */
+
+}
+
+
+.regu {
+    font-family: 'reg';
+}
+
+h3 { /* As I want text centered and even in home page */
+    text-wrap: balance;
+}
+
+
+.home h3 {
+    margin: 0.15rem 0; /* small margin to make more clear, nto too much so Home page doens't have tiny scroll**/
+}
