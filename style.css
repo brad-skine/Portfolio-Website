@@ -68,6 +68,9 @@ main {
 }
 
 
+
+
+
 .parallax-background {
     position: fixed;
     top: 0;
@@ -165,17 +168,14 @@ nav a:hover, h1 {
 }
 
 
-
-
-@media screen and (max-width: 375px) {
+@media screen and (max-width:355px) {
     html {
         font-size: 7px;
     }
+}
 
-    .nav-toggle {
-        display: block;
-        margin-left: 5vw;
-    }
+@media screen and (max-width:758px) {
+   
 
     .nav-list {
         flex-direction: column;
@@ -316,7 +316,8 @@ footer { /* bottom of saything that website is made by me ad me alone */
 
 h2 {
     margin: 0 auto;
-    margin-top: 7vh;
+    /* margin-bottom: 7vh; */
+    margin-top: 2vh;
     color: black;
     /* border: 0.2vh solid black; */
     -webkit-text-stroke: 0.009em white;
@@ -334,13 +335,20 @@ h2 {
 
 .project {
     width: 48%; /* Adjust width to fit side by side */
-    margin: 10px 0;
+    margin: 0 0 20px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 10px;
     border-radius: 8px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.01);
+    margin-bottom: 8vh;
+   
+}
 
+
+
+.home.project {
+    margin-bottom: 0;
 }
 
 .bigger_project {
@@ -361,7 +369,7 @@ h2 {
     height: auto;
     margin: 10px 0;
      margin: 0 auto; 
-      
+    
 }
 
 
@@ -392,6 +400,9 @@ h2 {
 }
 
 @media (max-width: 850px) {
+    .parallax-background {
+        height: 350%;
+    }
     .project {
         flex: 100%;
     
@@ -581,9 +592,11 @@ h2 {
     transition: color 0.7s;
 }
 
+
 .contacts_content p {
     margin: 4vh 0; /* Adds spacing between paragraphs */
 }
+
 
 .contacts_content a, footer a:hover {
     color: black;
@@ -629,4 +642,10 @@ h3 { /* As I want text centered and even in home page */
 
 .home h3 {
     margin: 0.15rem 0; /* small margin to make more clear, nto too much so Home page doens't have tiny scroll**/
+}
+
+
+h3.student {
+    color: white;
+    -webkit-text-stroke: 0.019em black;
 }
