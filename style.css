@@ -120,7 +120,7 @@ nav {
 
 
 
-nav a , h1 {
+nav a , h1, .github {
     color: black;
     /* border: 0.2vh solid black; */
     -webkit-text-stroke: 0.019em white;
@@ -135,7 +135,7 @@ nav a , h1 {
 }
 
 
-nav a:hover, h1 {
+nav a:hover, h1,  .github:hover {
     /* background-color: #888; */
     color: white;
     text-shadow: red;
@@ -152,7 +152,7 @@ nav a:hover, h1 {
     border: none;
     font-size: 7vh; /* Adjust size as needed */
     cursor: pointer;
-    z-index: 343;
+    z-index: 4;
 }
 .hamburger {
     border-radius: 10%;
@@ -305,9 +305,9 @@ footer { /* bottom of saything that website is made by me ad me alone */
 }
 
 .cvpdf {
-    width: 95vw;
+    width: 94vw;
     max-width: 1000px;
- height:1 ; /* js */
+ height: dones in js; /* js */
     border: none; /* Optional: remove the border if any */
     display: block;
     align-self: center;
@@ -369,7 +369,7 @@ h2 {
     height: auto;
     margin: 10px 0;
      margin: 0 auto; 
-    
+    z-index: 5;
 }
 
 
@@ -412,18 +412,20 @@ h2 {
     }
 
    .img_zoom.left:hover , .img_zoom.right:hover {
-        transform: scale(1.3);
+        transform: scale(1.2);
    }
 
 }
 
 .img_zoom {
     transition: transform 0.3s, left 0.3s, top 0.3s;
+    z-index: 10;
+    position: relative;
   }
   .img_zoom:hover {
     
-    z-index: 999; /*so when hoer from one img to other new one overlaps*/
-    border: 2px solid black;
+    z-index: 33333; /*so when hoer from one img to other new one overlaps*/
+    border: 3px solid black;
    
   }
 

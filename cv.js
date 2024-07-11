@@ -10,7 +10,7 @@ window.addEventListener('load', function() {
         // }
 
        
-        pdfObject.style.height = `${width * 1.31}px`; //Replace with your desired multiplier
+        pdfObject.style.height = `${width * 1.413}px`; //Replace with your desired multiplier
     };
     updateHeight(); //Set height on load
     window.addEventListener('resize', updateHeight); //Update height on resize
