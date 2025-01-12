@@ -68,24 +68,21 @@ document.addEventListener('DOMContentLoaded', function() {
           
             event.preventDefault();
             
-            // Get the clicked link's text
-             const linkText = this.textContent;
+
+            const linkText = this.textContent;
             const linkHref = this.querySelector('a').href;
 
-            // Get the bounding box of the clicked item and the header title
             const itemRect = this.getBoundingClientRect();
             const headerRect = headerTitle.getBoundingClientRect();
 
             const centerX = window.innerWidth / 2;
 
-            // Calculate the translation values
+            //translation values
             const translateX = centerX - (itemRect.left + itemRect.width / 2);
             const translateY = headerRect.top - itemRect.top;
 
-            // Remove any previous animations
             navItems.forEach(nav => nav.classList.remove('animate'));
 
-            // Set inline styles for the animation
             this.style.transition = 'transform 0.3s ease';
             this.style.transform = `translate(${translateX}px, ${translateY}px) rotate(360deg)`;
 
@@ -97,13 +94,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Update the H1 text
                 headerTitle.textContent = linkText;
 
-                // Reset the styles
                 this.style.transition = '';
                 this.style.transform = '';
               
 
                 window.location.href = linkHref;
-            }, 300); // Match this duration to your animation duration
+            }, 300); 
         });
     });
 });
