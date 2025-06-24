@@ -55,7 +55,7 @@ document.addEventListener('scroll', function() {
     const scrollPosition = window.scrollY;
     const parallaxBackground = document.querySelector('.parallax-background');
 
-    parallaxBackground.style.transform = 'translateY(' + (scrollPosition * -(0.5)) + 'px)';
+    parallaxBackground.style.transform = 'translateY(' + (scrollPosition * -(0.4)) + 'px)';
 });
 
 document.addEventListener('DOMContentLoaded', function() {
