@@ -5,12 +5,13 @@ window.addEventListener('load', function() {
     const pdfObject = document.querySelector('.cvpdf');
     const updateHeight = () => {
         var width = pdfObject.clientWidth;
+        
+
         // if (width >= maxPdfWidth) {
         //    width = maxPdfHeight;
         // }
-
        
-        pdfObject.style.height = `${width * 2.78}px`; //Replace with your desired multiplier
+        pdfObject.style.height = `${width * 2.9}px`; //Replace with your desired multiplier
     };
     updateHeight(); //Set height on load
     window.addEventListener('resize', updateHeight); //Update height on resize
