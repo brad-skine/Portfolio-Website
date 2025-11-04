@@ -14,7 +14,8 @@ html {
     font-size: 20px;
     width: 100%;
     height: 100%;
-   overflow: visible scroll;
+   /* overflow: visible scroll; */
+    
 
 }
 
@@ -25,16 +26,29 @@ html {
 }
 body {
     /* font-family: Arial, sans-serif; */
-    background-color: #b8a8f1;
-    margin: 0;
-    padding: 0;
+    /* background-color: #d1d1d1; */
+    /*TODO add new background that isn't over powering*/
+    background: linear-gradient(-45deg, #d6d6d6, #8d8d8d, #858585, #5c5c5c);
+	background-size: 850% 850%;
+	animation: gradient 15s ease infinite;
+
     display: flex;
     flex-direction: column; 
-    min-height: 100vh;
+    min-height: 100%;
     width: 100%;
-    overflow-y: hidden;
-    overflow: hidden;
-   
+    /* overflow: hidden;
+    overflow-y: auto; */
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 header {
@@ -44,12 +58,13 @@ header {
     top: 0;
 }
 main {
-    flex: 1;
+    /* flex: 1; */
     align-self: center;
     box-sizing: border-box;
     padding: 1em;
     margin: 1em;
-    margin-top: 1vh;
+    margin-top: 0;
+    padding-top: 0;
 
     
     display: flex;
@@ -58,19 +73,14 @@ main {
     justify-content: flex-start;
     min-height: 55vh;
     width: 93%;
-    overflow-x: hidden;
     
-    overflow: hidden;
-
-    /* scrollbar-color: yellow; */
-    /* overflow: hidden auto; */
+    /* overflow-x: hidden; */
+    /* overflow: hidden; */
     
 }
 
 
-
-
-
+/* 
 .parallax-background {
     position: fixed;
     top: 0;
@@ -83,35 +93,45 @@ main {
     transform: translateZ(0);
     height: 250%; /* Double the height for parallax scrolling */
 
-}
-
+/* } */
 
 
 nav {
     /* background-color: #666; */
+    background: linear-gradient(90deg, #1a1a1a, #252525);
+    height: 7vh;
     width: 100%;
     padding: 0.05em 0.5em;
     height: 7vh;
     display: flex;
-    /* justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    position: relative; */
+    position: sticky;
+    top: 0;
+    z-index: 10000;
 }
 
 
 .nav-list {
     list-style: none;
-
-    /* padding: 2vh 0; */
     display: flex;
     flex-wrap: wrap;
-    
-    justify-content: space-evenly;
-    align-items: end;
-    width: 100%;
+    justify-content: center;
+    /* align-items: end; */
+    gap: 20px;
+    /* width: 100%; */
 }
 
+@media  screen and (max-width: 854px) {
+    html { 
+        font-size: 19px;
+    }
 
+    .nav-list {
+        gap: 0;
+        /* margin; */
+    }
+}
 
 @media screen and (max-width: 550px) {
     html{
@@ -119,8 +139,6 @@ nav {
     }
    
 }
-
-
 
 nav a , h1, .github {
     color: black;
@@ -152,9 +170,9 @@ nav a:hover, h1,  .github:hover {
     display: none;
     background: none;
     border: none;
-    font-size: 7vh; /* Adjust size as needed */
+    font-size: 5vh; /* Adjust size as needed */
     cursor: pointer;
-    z-index: 4;
+    z-index: 999;
 }
 .hamburger {
     border-radius: 10%;
@@ -178,7 +196,6 @@ nav a:hover, h1,  .github:hover {
 
 @media screen and (max-width:758px) {
    
-
     .nav-list {
         flex-direction: column;
         align-items: center;
@@ -189,8 +206,6 @@ nav a:hover, h1,  .github:hover {
         left: 0;
         background-color: rgba(0, 0, 0, 0.8);
     }
-
-
 
     .nav-list.show {
         display: flex;
@@ -203,7 +218,10 @@ nav a:hover, h1,  .github:hover {
     }
 
     .nav-toggle {
-        display: block
+        display: block;
+        position: fixed;
+        left: 5%;
+
     }
 }
 
@@ -213,11 +231,17 @@ nav a:hover, h1,  .github:hover {
 h1 {
     font-size: 1.9rem;
     /* padding: 1rem; */
-    background-color: rgb(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 1.2);
     border-radius: 5px;
     font-weight: normal;
     /* margin: 0 0 1vh 0px; */
-    width: 100%;
+    /* width: 100%; */
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
+    /* width: 100%; TODO: make look good*/
+    
     text-align: center;
     color: white;
     text-decoration: none;
@@ -281,7 +305,7 @@ p#mainText {
 }
 
 footer { /* bottom of saything that website is made by me ad me alone */
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 1.2);
     color: white;
     text-align: center;
     padding: 1rem;
@@ -320,9 +344,9 @@ footer { /* bottom of saything that website is made by me ad me alone */
 
 
 h2 {
-    margin: 0 auto;
-    /* margin-bottom: 7vh; */
-    margin-top: 2vh;
+    margin: auto;
+    /* margin-top: 2vh; */
+    margin-bottom: 0.6vh;
     color: black;
     /* border: 0.2vh solid black; */
     -webkit-text-stroke: 0.009em white;
@@ -331,33 +355,31 @@ h2 {
     font-size: 1.7rem;
     /* border: 1px solid white; */
     width: 50vw;
-   
     text-wrap: nowrap;
   
     /* text-decoration: underline;
     text-decoration-thickness: 7%; */
 } 
 
-.project {
+.project { /*TODO center and align with h1 add spacing */
     width: 48%; /* Adjust width to fit side by side */
     margin: 0 0 20px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 10px;
     border-radius: 8px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.01);
-    margin-bottom: 8vh;
-   
+    background-color: rgba(255, 255, 255, 0.4);  /* TODO add contrast */
+    margin-bottom: 6.1vh;
+    /* margin: 8vh, */
+    margin-left:auto;
+    margin-right: auto;
 }
 
 
-
-.home.project {
-    margin-bottom: 0;
-}
 
 .bigger_project {
     width: 96%;
+    /* margin-bottom: 10vh; */
 }
 
 
@@ -429,7 +451,7 @@ h2 {
   }
   .img_zoom:hover {
     
-    z-index: 33333; /*so when hoer from one img to other new one overlaps*/
+    z-index: 10; /*so when hoer from one img to other new one overlaps*/
     border: 3px solid black;
    
   }
@@ -457,9 +479,10 @@ h2 {
     text-align: center;
 
     /* text-transform: uppercase; */
-    background-color: #4CAF50;
+    background-color: #000000;
+    border: white, 2px, solid;
     position: relative;
-    z-index: 2;
+    z-index: 11;
     border-radius: 0.625rem;
     box-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -471,11 +494,13 @@ h2 {
 
 
 .button a:hover {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .button p {
-    background-color: darkgreen;
+    background-color: #000000;
+    border: white, 2px, solid;
+
     display: block;
     height: 2.5rem;
     width: 10.5rem;
@@ -527,12 +552,13 @@ h2 {
     border-radius: 10%;
     display: inline-block;
     height:100;
-    background-color: darkgreen;
+    background-color: rgb(255, 255, 255);
     font-size: 2em;
-    color: white;
+    color: rgb(0, 0, 0);
     transition: transform 0.3s ease;
     transition: color 0.5s;
- 
+        
+    
 } 
 
 
@@ -578,7 +604,7 @@ h2 {
 
 
 .contacts_content {
-    background-color: rgba(255, 255, 255, 0.08); /*makes text easier to read */
+    background-color: rgba(255, 255, 255, 0.4); /*makes text easier to read */
     width: 100%;
     border-radius: 8px;
     width: 100%;
@@ -638,21 +664,26 @@ h2 {
 }
 
 
-.regu {
-    font-family: 'reg';
-}
-
 h3 { /* As I want text centered and even in home page */
     text-wrap: balance;
 }
 
-
+.home {
+    margin-bottom: 0;
+}
 .home h3 {
     margin: 0.15rem 0; /* small margin to make more clear, nto too much so Home page doens't have tiny scroll**/
+    /* font-size: 1.5rem; */
+    font-size: 1.5rem;
 }
 
+.regu {
+    /* font-family: 'reg'; */
+    font-size: 1.51rem;
+}
 
 h3.student {
     color: white;
-    -webkit-text-stroke: 0.019em black;
+    -webkit-text-stroke: 1px black;
 }
+

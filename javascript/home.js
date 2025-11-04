@@ -15,48 +15,48 @@
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const movingText = document.getElementById('movingText');
-    const movingElement = document.getElementById('movingElement');
-    const mainElement = document.querySelector('main');
+// document.addEventListener('DOMContentLoaded', function () {
+//     const movingText = document.getElementById('movingText');
+//     const movingElement = document.getElementById('movingElement');
+//     const mainElement = document.querySelector('main');
 
-    function getRandomPosition() {
-        const mainRect = mainElement.getBoundingClientRect();
-        const maxX = mainRect.width - movingElement.clientWidth;
-        const maxY = mainRect.height - movingElement.clientHeight;
-        const randomX = Math.floor(Math.random() * maxX);
-        const randomY = Math.floor(Math.random() * maxY);
-        return { x: randomX, y: randomY };
-    }
+//     function getRandomPosition() {
+//         const mainRect = mainElement.getBoundingClientRect();
+//         const maxX = mainRect.width - movingElement.clientWidth;
+//         const maxY = mainRect.height - movingElement.clientHeight;
+//         const randomX = Math.floor(Math.random() * maxX);
+//         const randomY = Math.floor(Math.random() * maxY);
+//         return { x: randomX, y: randomY };
+//     }
 
-    movingElement.addEventListener('mouseover', () => {
-        const newPosition = getRandomPosition();
-        movingElement.style.transform = `translate(${newPosition.x}px, ${newPosition.y}px)`;
-    });
+//     movingElement.addEventListener('mouseover', () => {
+//         const newPosition = getRandomPosition();
+//         movingElement.style.transform = `translate(${newPosition.x}px, ${newPosition.y}px)`;
+//     });
 
-    movingText.addEventListener('click', () => {
-        console.log('Click event fired!');
-        alert('You clicked the moving text!');
-    });
+//     movingText.addEventListener('click', () => {
+//         console.log('Click event fired!');
+//         alert('You clicked the moving text!');
+//     });
 
-    movingElement.addEventListener('click', () => {
-        console.log('CLick event fired!');
-        alert('You clicked the moving element!');
-    });
+//     movingElement.addEventListener('click', () => {
+//         console.log('CLick event fired!');
+//         alert('You clicked the moving element!');
+//     });
 
-    setInterval(() => {
-        const newPosition = getRandomPosition();
-        movingText.style.transform = `translate(${newPosition.x}px, ${newPosition.y}px)`;
-    }, 2000);
-});
+//     setInterval(() => {
+//         const newPosition = getRandomPosition();
+//         movingText.style.transform = `translate(${newPosition.x}px, ${newPosition.y}px)`;
+//     }, 2000);
+// });
 
 
-document.addEventListener('scroll', function() {
-    const scrollPosition = window.scrollY;
-    const parallaxBackground = document.querySelector('.parallax-background');
+// document.addEventListener('scroll', function() {
+//     const scrollPosition = window.scrollY;
+//     const parallaxBackground = document.querySelector('.parallax-background');
 
-    parallaxBackground.style.transform = 'translateY(' + (scrollPosition * -(0.4)) + 'px)';
-});
+//     parallaxBackground.style.transform = 'translateY(' + (scrollPosition * -(0.4)) + 'px)';
+// });
 
 document.addEventListener('DOMContentLoaded', function() {
     const navItems = document.querySelectorAll('.nav-item');
