@@ -13,6 +13,7 @@
   rgba(0, 0, 37, 0.8)
 );
     --main_shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    --text_shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* style.css */
@@ -20,6 +21,7 @@ html {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     font-size: 20px;
     width: 100%;
     height: 100%;
@@ -161,17 +163,20 @@ nav a , h1, .github {
     font-size: 1.7rem;
     text-decoration-color: black;
     transition: color 0.5s;
+
     /* text-decoration: ; */
 }
 
 
 nav a:hover, h1,  .github:hover {
+
     /* background-color: #888; */
     color: white;
-    text-shadow: red;
-    -webkit-text-stroke-color: black;
+    /* text-shadow: red; */
     transition: color 0.05s;
     text-decoration-color: white;
+
+    -webkit-text-stroke-color: black;
     /* border-radius: 10%; */
 }
 
@@ -239,11 +244,12 @@ nav a:hover, h1,  .github:hover {
 
 
 h1 {
-    font-size: 1.9rem;
+    /* font-size: 1.9rem; */
     /* padding: 1rem; */
-    background: var(--dark_grad);
+    /* background: var(--dark_grad); */
+    font-size: 1.9rem;
     border-radius: 5px;
-    font-weight: normal;
+    font-weight: bold;
     /* margin: 0 0 1vh 0px; */
     /* width: 100%; */
     margin-right: auto;
@@ -251,11 +257,13 @@ h1 {
     margin-top: 1.5vh;
     margin-bottom: 1.5vh;
     /* width: 100%; TODO: make look good*/
-    
     text-align: center;
     color: white;
     text-decoration: none;
     text-decoration-thickness: 0.04em;
+    -webkit-text-stroke-color: black;
+    text-shadow: var(--text_shadow);
+
 }
 
 
@@ -320,6 +328,7 @@ footer { /* bottom of saything that website is made by me ad me alone */
     color: white;
     text-align: center;
     padding: 1rem;
+    font-size: 1.17em;
     bottom: 0;
     width: 100%;
     border-radius: 3px;
@@ -327,7 +336,7 @@ footer { /* bottom of saything that website is made by me ad me alone */
     align-items: center;
     margin-top: auto;
     flex-shrink: 0;
-    font-family: "reg";
+    /* font-family: "reg"; */
     /* position: fixed; */
 }
 
