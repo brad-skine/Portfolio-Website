@@ -387,7 +387,7 @@ h2 {
 .project { /*TODO center and align with h1 add spacing */
     width: 48%; /* Adjust width to fit side by side */
     margin: 0 0 20px 0;
-    box-shadow: 7px 7px 13px rgba(0, 0, 0, 0.2);
+    box-shadow: 7px 7px 13px rgba(0, 0, 0, 0.4);
     padding: 10px;
     border-radius: 0.7rem;
     text-align: center;
