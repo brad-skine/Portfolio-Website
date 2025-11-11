@@ -71,8 +71,11 @@ main {
     /* flex: 1; */
     align-self: center;
     box-sizing: border-box;
-    padding: 1em;
-    margin: 1em;
+    padding: 5vw, 0p;
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+    /* margin: 1em; */
     margin-top: 0;
     padding-top: 0;
 
@@ -407,7 +410,12 @@ h2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 7vh;
     
+}
+
+.projects_list.bot {
+    margin-bottom: 3vh;
 }
 
 .project img {
