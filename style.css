@@ -6,7 +6,12 @@
 
 
 :root {
-    --dark_grad: linear-gradient(45deg, #000000,#000012, #000025);
+    --dark_grad: linear-gradient(
+  45deg,
+  rgba(0, 0, 0, 0.8),
+  rgba(0, 0, 18, 0.8),
+  rgba(0, 0, 37, 0.8)
+);
     --main_shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -102,6 +107,8 @@ main {
 nav {
     /* background-color: #666; */
     background: var(--dark_grad);
+    /* TODO make less controls */
+
     height: 7vh;
     width: 100%;
     padding: 0.05em 0.5em;
@@ -483,7 +490,7 @@ h2 {
     text-align: center;
 
     /* text-transform: uppercase; */
-    background-color: #000000;
+    background: var(--dark_grad);
     border: white, 2px, solid;
     position: relative;
     z-index: 11;
@@ -502,9 +509,9 @@ h2 {
 }
 
 .button p {
-    background-color: #000000;
+    background: var(--dark_grad);
+    /* background-color: #000000; */
     border: white, 2px, solid;
-
     display: block;
     height: 2.5rem;
     width: 10.5rem;
@@ -516,20 +523,23 @@ h2 {
     z-index: 1;
     border-radius: 0.625rem;
     box-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.2);
-    transition: transform 0.7s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+    transition: transform 0.6s cubic-bezier(0.6, -0.28, 0.74, 0.05),
+    opacity 0.6s ease;
+    opacity: 0;
 }
 
 .button a, .button p {
-    
     border-radius: 0.8125rem;
     box-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .button:hover .bottom { 
+    opacity: 1;
     transform: translate(-98%);
 }
 
 .button:hover .top {
+    opacity: 1;
     transform: translateX(98%);
 }
 
@@ -569,6 +579,7 @@ h2 {
 .button a:hover .download_icon {
     color: black;
     animation: bounce 0.7s infinite;
+    
     animation-fill-mode: forwards; /* Keeps the last keyframe state after animation ends */
 }
 
@@ -664,7 +675,6 @@ h2 {
     object-fit: cover;  /* Ensures the image covers the container while maintaining aspect ratio */
     display: block; /* Ensures no extra space around the image */
     margin: auto; /* Centers the image horizontally */
-
 }
 
 
