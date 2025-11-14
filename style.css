@@ -733,11 +733,13 @@ h3.name {
 h3.student {
     color: white;
     text-shadow: var(--main_shadow);
+    text-shadow: 2px 2px black;
     font-size: 1.5em;
+    
     margin-bottom: 0.4em;
-    /* -webkit-text-stroke: 0.1rem black; */
+    -webkit-text-stroke: 0.01em black;
 }
 
 h3.grad{
-    font-size: 1em;
+    font-size: 1em; 
 }
