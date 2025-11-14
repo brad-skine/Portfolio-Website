@@ -122,3 +122,17 @@ document.addEventListener('DOMContentLoaded', function() {
         
     });
 });
+
+
+
+const projects = document.querySelectorAll('.proj_header, .projects_list');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+projects.forEach(p => observer.observe(p));
