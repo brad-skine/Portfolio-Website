@@ -212,7 +212,7 @@ nav a:hover, h1,  .github:hover {
     }
 }
 
-@media screen and (max-width:758px) {
+@media screen and (max-width:620px) {
    
     .nav-list {
         flex-direction: column;
