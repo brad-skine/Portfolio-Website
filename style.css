@@ -36,12 +36,19 @@ html {
     box-sizing: border-box;
 }
 body {
-    /* font-family: Arial, sans-serif; */
-    /* background-color: #d1d1d1; */
     /*TODO add new background that isn't over powering*/
-    background: linear-gradient(-45deg, #eaeaff, #d5d5ff, #ababff, #9999ff);
-	background-size: 450% 850%;
-	animation: gradient 15s ease infinite;
+        background: linear-gradient(-45deg,
+        #eaeaff,
+        #d5d5ff,
+        #ababff,
+        #9999ff,
+        #ababff,
+        #d5d5ff,
+        #eaeaff
+    );
+    /* background-repeat: ; */
+	background-size: 1200% 1200%;
+	animation: gradient 20s ease infinite;
     display: flex;
     flex-direction: column; 
     min-height: 100%;
@@ -50,15 +57,9 @@ body {
     overflow-y: auto; */
 }
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+	0% {background-position: 0% 50%;}
+	50% {background-position: 100% 50%;}
+	100% {background-position: 0% 50%;}
 }
 
 header {
@@ -386,13 +387,13 @@ h2 {
 
 .project { /*TODO center and align with h1 add spacing */
     width: 48%; /* Adjust width to fit side by side */
-    margin: 0 0 20px 0;
+    /* margin: 0 0 20px 0; */
     box-shadow: 7px 7px 13px rgba(0, 0, 0, 0.4);
     padding: 10px;
     border-radius: 0.7rem;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.2);  /* TODO add contrast */
-    margin-bottom: 6.1vh;
+    /* margin-bottom: 6.1vh; */
     /* margin: 8vh, */
     margin-left:auto;
     margin-right: auto;
@@ -412,16 +413,16 @@ h2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 7vh;
+    margin-bottom: 15vh;
 
-   
+    gap: 3vh;
 
 }
 
 .projects_list, .project_header { /* scroll appear animation */
     opacity:  0 ;
     transform: translateY(40px);
-    transition: 0.6s ease, transform 0.6s ease;
+    transition: 0.7s ease, transform 0.7s ease;
 }
 
 .projects_list.visible, .proj_header.visible { /* js adds visible class when visible using observer */
