@@ -431,7 +431,7 @@ h2 {
 }
 
 .projects_list.bot {
-    margin-bottom: 3vh;
+    margin-bottom: 8vh;
 }
 
 .project img {
@@ -466,6 +466,16 @@ h2 {
 .img_zoom.left:hover {
     transform: scale(1.4) translateX(5vw) ; /* Enlarge the image on hover */
 }
+
+.img_zoom.middle:hover {
+    transform: scale(1.4); /* Enlarge the image on hover */
+}
+
+.img_zoom.middle {
+    width: 70%;
+}
+
+
 .img_zoom.right:hover {
     transform: scale(1.4) translateX(-5vw) ; /* Enlarge the image on hover */
 }
