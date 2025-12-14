@@ -15,3 +15,5 @@ window.addEventListener('load', function() {
     updateHeight(); //Set height on load
     window.addEventListener('resize', updateHeight); //Update height on resize
 }); 
+
+
