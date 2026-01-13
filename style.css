@@ -47,7 +47,7 @@ body {
         #eaeaff
     );
     /* background-repeat: ; */
-	background-size: 1300% 1300%;
+	background-size: 1500% 1500%;
 	animation: gradient 20s ease infinite;
     display: flex;
     flex-direction: column; 
@@ -77,16 +77,11 @@ main {
     padding-right: 5vw;
 
     /* margin: 1em; */
-    margin-top: 0;
-    padding-top: 0;
-
-    
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
     min-height: 55vh;
-    width: 93%;
+    width: 100%;
     
     /* overflow-x: hidden; */
     /* overflow: hidden; */
@@ -140,7 +135,7 @@ nav {
 
 @media  screen and (max-width: 854px) {
     html { 
-        font-size: 19px;
+        font-size: clamp(15px, 1vw, 18px);
     }
 
     .nav-list {
@@ -305,6 +300,7 @@ img {
     margin: 20px 0; 
     border-radius: 0.6%;
     align-self: center;
+    
 }
 /* main::-webkit-scrollbar {
     width: 8px;
@@ -366,6 +362,14 @@ footer { /* bottom of saything that website is made by me ad me alone */
     align-self: center;
 }
 
+.trinity_certificate {
+        width: 90vw;
+    max-width: 800px;
+ height: js; /* js */
+    border: none; /* Optional: remove the border if any */
+    display: block;
+    align-self: center;
+}
 
 h2 {
     margin: auto;
@@ -379,14 +383,16 @@ h2 {
     font-size: 1.7rem;
     /* border: 1px solid white; */
     width: 50vw;
-    text-wrap: nowrap;
+    text-wrap: wrap;
   
     /* text-decoration: underline;
     text-decoration-thickness: 7%; */
 } 
 
 .project { /*TODO center and align with h1 add spacing */
-    width: 48%; /* Adjust width to fit side by side */
+
+    max-width: 800px;
+    width: 100%;
     /* margin: 0 0 20px 0; */
     box-shadow: 7px 7px 13px rgba(0, 0, 0, 0.4);
     padding: 10px;
@@ -397,8 +403,10 @@ h2 {
     /* margin: 8vh, */
     margin-left:auto;
     margin-right: auto;
+    padding: 1.25rem;
+    
 
- 
+
 }
 
 .bigger_project {
@@ -424,11 +432,15 @@ h2 {
 
 
 .projects_list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 15vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(388, 1fr));
+    gap: 3rem;
 
+    width: 100%;
+
+    /* justify-content: space-between; */
+    /* flex-wrap: wrap; */
+    margin-bottom: 15vh;
     gap: 3vh;
 
 }
@@ -449,22 +461,24 @@ h2 {
 }
 
 .project img {
-    width: 40vw;
+    width: 100%;
     min-width: 150px;
+
     height: auto;
-    margin: 10px 0;
-     margin: 0 auto; 
+    margin: 2rem 0;
+     /* margin: 0 auto;  */
     z-index: 5;
 }
 
 
 
-.img_zoom.left:hover {
-    transform: scale(1.4) translateX(5vw) ; /* Enlarge the image on hover */
+/* .img_zoom.left:hover {
+    transform: scale(1.2) translateX(5vw) ; 
+    transform: scale(1.2);
 }
 
 .img_zoom.middle:hover {
-    transform: scale(1.4); /* Enlarge the image on hover */
+    transform: scale(1.4); 
 }
 
 .img_zoom.middle {
@@ -473,21 +487,32 @@ h2 {
 
 
 .img_zoom.right:hover {
-    transform: scale(1.4) translateX(-5vw) ; /* Enlarge the image on hover */
-}
+     transform: scale(1.4) translateX(-5vw) ;  
+    transform: scale(1.2);
+} */
 
-@media (max-width: 875px) {
 
-    .project {
-        flex: 100%;
+
+ /* @media (min-width: 875px) {
+
+    .projects_list {
+        flex: 1fr 1fr;
     
-    }
+    } */
+
+   /* .img_zoom.left:hover , .img_zoom.right:hover {
+        transform: scale(1.2);
+   } */
+
+/* }  */
+
+/* @media (min-width: 800px) {
 
    .img_zoom.left:hover , .img_zoom.right:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
    }
 
-}
+} */
 
 
 .project.expense_tracker {
@@ -497,44 +522,70 @@ h2 {
 
 .dashboard-1-3 {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* left column bigger */
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 3vh;
+    /* margin: 0 2vh; */
+    /* margin-top: 2vh; */
     align-items: start; /* align top of images */
 }
 
+@media (max-width: 389px) {
+    .dashboard-1-3 {
+        grid-template-columns: 1fr; /* single column on small screens */
+    }
+}
+.dashboard-1-3 {
+    margin:  1rem 0;
+}
+
+
+.large-img {
+    height: 100%;
+}
 .large-img img {
 
-    width: 35vw;
+    /* width: 35vw; */
+    width: 100%;
     height: auto;
     border-radius: 8px;
     object-fit: cover;
+    margin: 0;
 }
 
 .small-imgs {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* space between smaller images */
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 12px;
+    height: 100%;
 }
 
 .small-imgs img {
-    width: 35vw;
-    height: auto;
+    /* width: 35vw; */
+    height: 100%;
+    width: 100%;
     /* max-height:%; */
     border-radius: 8px;
     object-fit: cover;
+    margin: 0;
+}
+
+.large-img img,
+.project img {
+    width: 100%;
+    /* max-width: 100%; */
+    height: auto;
 }
 
 
 .img_zoom {
+ 
     transition: transform 0.3s, left 0.3s, top 0.3s;
     z-index: 10;
     position: relative;
   }
   .img_zoom:hover {
-    
+    transform: scale(1.1); 
     z-index: 10; /*so when hoer from one img to other new one overlaps*/
     border: 3px solid black;
    
@@ -545,7 +596,8 @@ h2 {
 .button {
 
     width: 12.5rem;
-    margin: 2vh auto;
+    margin: 0vh auto;
+    margin-top: 1em;
     position: relative;
    
 }
@@ -604,7 +656,9 @@ h2 {
 .button a, .button p {
     border-radius: 0.8125rem;
     box-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.2);
+    
 }
+
 
 .button:hover .bottom { 
     opacity: 1;

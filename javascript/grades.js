@@ -16,3 +16,16 @@ window.addEventListener('load', function() {
     updateHeight(); //Set height on load
     window.addEventListener('resize', updateHeight); //Update height on resize
 });
+
+
+let resizeTimeout;
+
+window.addEventListener('resize', () => {
+  // Clear the previous timeout if resizing continues
+  clearTimeout(resizeTimeout);
+
+  // Wait 300ms after the last resize event before reloading
+  resizeTimeout = setTimeout(() => {
+    window.location.reload();
+  }, 300);
+});

@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
               
 
                 window.location.href = linkHref;
-            }, 300); 
+            }, 210); 
         });
     });
 });
